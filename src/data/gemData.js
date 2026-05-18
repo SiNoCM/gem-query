@@ -201,14 +201,17 @@ export function calcBOM(gem, targetLevel) {
   return { steps, levelNeeds, extraNeeds }
 }
 
+// 宝石图标基础路径（兼容 GitHub Pages 子目录部署）
+const gemIconBase = import.meta.env.BASE_URL + 'gems'
+
 // 宝石类型定义
 export const gemTypes = [
-  { id: 1, name: '光芒石', icon: '/gems/guangmangshi.png', desc: '增加气血上限，镶嵌于装备', ratio: 2, maxLevel: 20, rules: generateGemRules() },
-  { id: 2, name: '月亮石', icon: '/gems/yueliangshi.png', desc: '增加防御，镶嵌于装备',     ratio: 2, maxLevel: 20, rules: generateGemRules() },
-  { id: 3, name: '舍利子', icon: '/gems/shelizi.png', desc: '增加灵力，镶嵌于装备',     ratio: 2, maxLevel: 20, rules: generateGemRules() },
-  { id: 4, name: '红玛瑙', icon: '/gems/hongmanao.png', desc: '增加伤害，镶嵌于装备',     ratio: 2, maxLevel: 20, rules: generateGemRules() },
-  { id: 5, name: '太阳石', icon: '/gems/taiyangshi.png', desc: '增加速度，镶嵌于装备',     ratio: 2, maxLevel: 20, rules: generateGemRules() },
-  { id: 6, name: '黑宝石', icon: '/gems/heibaoshi.png', desc: '增加速度(鞋类)，镶嵌于装备', ratio: 2, maxLevel: 20, rules: generateGemRules() },
-  { id: 7, name: '翡翠石', icon: '/gems/feicuishi.png', desc: '增加灵力(项链类)，镶嵌于装备', ratio: 2, maxLevel: 20, rules: generateGemRules() },
-  { id: 8, name: '星辉石', icon: '/gems/xinghuishi.svg', desc: '提升灵饰下排属性，镶嵌于灵饰，最高11锻', ratio: 3, maxLevel: 11, rules: generateStarRules() },
+  { id: 1, name: '光芒石', icon: `${gemIconBase}/guangmangshi.png`, desc: '增加气血上限，镶嵌于装备', ratio: 2, maxLevel: 20, rules: generateGemRules() },
+  { id: 2, name: '月亮石', icon: `${gemIconBase}/yueliangshi.png`, desc: '增加防御，镶嵌于装备',     ratio: 2, maxLevel: 20, rules: generateGemRules() },
+  { id: 3, name: '舍利子', icon: `${gemIconBase}/shelizi.png`, desc: '增加灵力，镶嵌于装备',     ratio: 2, maxLevel: 20, rules: generateGemRules() },
+  { id: 4, name: '红玛瑙', icon: `${gemIconBase}/hongmanao.png`, desc: '增加伤害，镶嵌于装备',     ratio: 2, maxLevel: 20, rules: generateGemRules() },
+  { id: 5, name: '太阳石', icon: `${gemIconBase}/taiyangshi.png`, desc: '增加速度，镶嵌于装备',     ratio: 2, maxLevel: 20, rules: generateGemRules() },
+  { id: 6, name: '黑宝石', icon: `${gemIconBase}/heibaoshi.png`, desc: '增加速度(鞋类)，镶嵌于装备', ratio: 2, maxLevel: 20, rules: generateGemRules() },
+  { id: 7, name: '翡翠石', icon: `${gemIconBase}/feicuishi.png`, desc: '增加灵力(项链类)，镶嵌于装备', ratio: 2, maxLevel: 20, rules: generateGemRules() },
+  { id: 8, name: '星辉石', icon: `${gemIconBase}/xinghuishi.svg`, desc: '提升灵饰下排属性，镶嵌于灵饰，最高11锻', ratio: 3, maxLevel: 11, rules: generateStarRules() },
 ]
