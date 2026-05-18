@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D0BFFF"/>
+      <stop offset="50%" style="stop-color:#7950F2"/>
+      <stop offset="100%" style="stop-color:#5F3DC4"/>
+    </linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#00000040"/></filter>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <polygon points="32,6 38,22 56,22 42,34 48,52 32,42 16,52 22,34 8,22 26,22" fill="url(#g)" stroke="#6741D9" stroke-width="1" filter="url(#s)"/>
+  <polygon points="32,16 35,24 44,24 37,30 40,38 32,33 24,38 27,30 20,24 29,24" fill="#D0BFFF" opacity="0.4"/>
+  <circle cx="32" cy="32" r="4" fill="white" opacity="0.3" filter="url(#glow)"/>
+</svg>

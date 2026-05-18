@@ -1,0 +1,99 @@
+/* ========================================
+   梦幻西游 · 宝石合成查询
+   iOS 26 Design Language
+   ======================================== */
+
+:root {
+  /* iOS 26 Color Tokens */
+  --ios-bg:          #f2f2f7;
+  --ios-bg-elevated: #ffffff;
+  --ios-bg-grouped:  #f2f2f7;
+  --ios-fill:        #e5e5ea;
+  --ios-fill-secondary: #e8e8ed;
+  --ios-fill-tertiary:  #efeff4;
+  --ios-separator:   #c6c6c8;
+  --ios-label:       #1c1c1e;
+  --ios-label-secondary: #8e8e93;
+  --ios-label-tertiary:  #aeaeb2;
+  --ios-blue:        #007aff;
+  --ios-blue-light:  rgba(0,122,255,0.12);
+  --ios-green:       #34c759;
+  --ios-green-light: rgba(52,199,89,0.12);
+  --ios-orange:      #ff9500;
+  --ios-orange-light:rgba(255,149,0,0.12);
+  --ios-red:         #ff3b30;
+  --ios-purple:      #af52de;
+  --ios-purple-light:rgba(175,82,222,0.12);
+  --ios-teal:        #5ac8fa;
+
+  /* Glassmorphism */
+  --glass-bg:        rgba(255,255,255,0.72);
+  --glass-border:    rgba(255,255,255,0.5);
+  --glass-shadow:    0 2px 16px rgba(0,0,0,0.06);
+  --glass-blur:      20px;
+
+  /* Radius */
+  --radius-sm:  10px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+  --radius-xl:  28px;
+
+  /* Typography */
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, monospace;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--ios-bg);
+  color: var(--ios-label);
+  min-height: 100vh;
+  line-height: 1.47;
+  overflow-x: hidden;
+}
+
+#app {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: left;
+  border: none;
+}
+
+/* Global input reset for iOS feel */
+input, select, button, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Remove number input spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Selection color */
+::selection {
+  background: var(--ios-blue-light);
+  color: var(--ios-blue);
+}
