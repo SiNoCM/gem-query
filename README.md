@@ -1,5 +1,45 @@
-# Vue 3 + Vite
+# 💎 梦幻西游 · 宝石合成查询
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+梦幻西游宝石合成计算器，支持 2 合 1（常规宝石）和 3 合 1（星辉石）的完整物料清单计算。
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+**在线使用**：[https://sinocm.github.io/gem-query/](https://sinocm.github.io/gem-query/)
+
+## 功能特性
+
+- **8 种宝石**：光芒石、月亮石、舍利子、红玛瑙、太阳石、黑宝石、翡翠石（2 合 1）、星辉石（3 合 1）
+- **完整 BOM 计算**：队列式拓扑展开算法，正确处理额外材料的嵌套合成成本
+- **iOS 26 设计风格**：深色渐变 Header、玻璃拟态卡片、流畅过渡动画
+- **全尺寸响应式**：手机、平板、桌面全适配，支持 iPhone X Safe Area
+- **官方宝石图标**：来源于梦幻西游官网
+
+## 技术栈
+
+- Vue 3 + Vite
+- 纯前端，无后端依赖
+- GitHub Actions 自动部署
+
+## 更新日志
+
+### v1.2.0 (2026-05-18)
+
+📱 **响应式适配**
+- 新增 5 个响应式断点，覆盖手机、平板、桌面全尺寸
+- 添加 iPhone X Safe Area 适配（刘海屏、底部横条）
+- 使用 `100dvh` 替代 `100vh`，解决手机地址栏收缩问题
+
+### v1.1.0 (2026-05-18)
+
+🐛 **Bug 修复**
+- 修复 BOM 计算逻辑：额外宝石的合成成本未回流到总需求中
+- 修复 GitHub Pages 子目录部署时宝石图标 404 的问题
+
+🚀 **部署**
+- 配置 GitHub Actions 自动部署到 GitHub Pages
+
+### v1.0.0 (2026-05-18)
+
+✨ **初始版本**
+- iOS 26 设计风格 UI
+- 8 种宝石支持（7 种 2 合 1 + 星辉石 3 合 1）
+- 完整 BOM 物料清单计算
+- 官方宝石图标
