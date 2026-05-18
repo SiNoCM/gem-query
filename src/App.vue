@@ -153,14 +153,19 @@ const canQuery = computed(() => {
   return true
 })
 
-const result = computed(() => {
-  if (!currentGem.value || !inputLevel.value) return null
+const result = ref(null)
+
+const extraEntries = computed(() => result.value?.extraEntries || [])
+
+function doQuery() {
+  queryDone.value = true
+  if (!currentGem.value || !inputLevel.value) { result.value = null; return }
   const gem = currentGem.value
   const lv = inputLevel.value
-  if (lv < 1 || lv > gem.maxLevel) return null
+  if (lv < 1 || lv > gem.maxLevel) { result.value = null; return }
 
   const rule = gem.rules.find(r => r.targetLevel === lv)
-  if (!rule) return null
+  if (!rule) { result.value = null; return }
 
   const bom = calcBOM(gem, lv)
 
@@ -176,12 +181,8 @@ const result = computed(() => {
     .map(([level, total]) => ({ level: Number(level), total }))
     .sort((a, b) => a.level - b.level)
 
-  return { gem, rule, bom, extraEntries }
-})
-
-const extraEntries = computed(() => result.value?.extraEntries || [])
-
-function doQuery() { queryDone.value = true }
+  result.value = { gem, rule, bom, extraEntries }
+}
 
 function formatNum(n) { return n.toLocaleString('zh-CN') }
 </script>
