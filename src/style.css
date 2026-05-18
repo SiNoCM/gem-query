@@ -61,8 +61,10 @@ body {
   background: var(--ios-bg);
   color: var(--ios-label);
   min-height: 100vh;
+  min-height: 100dvh;
   line-height: 1.47;
   overflow-x: hidden;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 #app {

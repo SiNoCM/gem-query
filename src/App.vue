@@ -193,10 +193,10 @@ function formatNum(n) { return n.toLocaleString('zh-CN') }
 .header {
   background: linear-gradient(180deg, #1c1c1e 0%, #2c2c2e 100%);
   padding: 20px 20px 24px;
+  padding-top: calc(20px + env(safe-area-inset-top, 0px));
   position: sticky;
   top: 0;
   z-index: 100;
-  margin: 0 -16px;
 }
 .header-inner {
   max-width: 560px;
@@ -651,39 +651,143 @@ function formatNum(n) { return n.toLocaleString('zh-CN') }
 /* =====================
    Responsive
    ===================== */
+
+/* --- 手机 (≤480px): iPhone SE / iPhone 15 Pro --- */
 @media (max-width: 480px) {
   .header {
     padding: 16px 16px 20px;
+    padding-top: calc(16px + env(safe-area-inset-top, 0px));
   }
   .header-icon {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 17px;
   }
   .header-text h1 {
-    font-size: 19px;
+    font-size: 18px;
+  }
+  .header-sub {
+    font-size: 12px;
   }
   .container {
-    padding: 12px 12px 32px;
+    padding: 12px 12px calc(32px + env(safe-area-inset-bottom, 0px));
   }
   .query-row {
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
+  }
+  .card-header {
+    padding: 14px 16px 10px;
+  }
+  .query-row {
+    padding: 0 16px;
+  }
+  .ios-btn {
+    width: calc(100% - 32px);
+    margin: 12px 16px 0;
+    padding: 12px 16px;
+    font-size: 15px;
   }
   .result-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    padding: 16px 16px 14px;
+  }
+  .result-gem-icon-wrap {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
+  .result-gem-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .result-title {
+    font-size: 18px;
   }
   .result-badge {
     align-self: flex-start;
+  }
+  .result-section {
+    padding: 14px 16px;
+  }
+  .section-label {
+    font-size: 12px;
+    margin-bottom: 10px;
   }
   .chip-grid {
     gap: 5px;
   }
   .chip {
     padding: 5px 8px;
+    gap: 2px;
+  }
+  .chip-lv {
+    font-size: 11px;
+  }
+  .chip-val {
+    font-size: 13px;
+  }
+  .chip-unit {
+    font-size: 10px;
+  }
+  .extra-item {
+    padding: 10px 12px;
+  }
+  .extra-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .extra-lv {
+    font-size: 14px;
+  }
+  .extra-val {
+    font-size: 14px;
+  }
+  .no-extra {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+  .empty-state {
+    padding: 36px 16px;
+  }
+  .empty-icon {
+    font-size: 32px;
+  }
+}
+
+/* --- 平板 (481px ~ 768px): iPad Mini / iPad --- */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    max-width: 600px;
+    padding: 16px 20px 40px;
+  }
+  .result-header {
+    flex-direction: row;
+  }
+}
+
+/* --- 桌面 (769px+): 宽屏优化 --- */
+@media (min-width: 769px) {
+  .container {
+    max-width: 580px;
+    padding: 24px 20px 48px;
+  }
+  .card {
+    box-shadow: 0 0.5px 0 0.5px rgba(0,0,0,0.05), 0 2px 12px rgba(0,0,0,0.08);
+  }
+  .result-header {
+    flex-direction: row;
+  }
+}
+
+/* --- 超宽屏 (1200px+): 居中装饰 --- */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 600px;
+    padding: 32px 20px 64px;
+  }
+  .header-inner {
+    max-width: 600px;
   }
 }
 </style>
