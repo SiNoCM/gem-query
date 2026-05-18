@@ -755,8 +755,34 @@ function formatNum(n) { return n.toLocaleString('zh-CN') }
   }
 }
 
-/* --- 平板 (481px ~ 768px): iPad Mini / iPad --- */
-@media (min-width: 481px) and (max-width: 768px) {
+/* --- 大屏手机横屏/小平板 (481px ~ 560px) --- */
+@media (min-width: 481px) and (max-width: 560px) {
+  .header {
+    padding: 16px 16px 20px;
+    padding-top: calc(16px + env(safe-area-inset-top, 0px));
+  }
+  .container {
+    padding: 14px 14px 36px;
+  }
+  .query-row {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 16px;
+  }
+  .ios-btn {
+    width: calc(100% - 32px);
+    margin: 12px 16px 0;
+  }
+  .result-header {
+    flex-direction: row;
+  }
+  .result-section {
+    padding: 14px 16px;
+  }
+}
+
+/* --- 平板 (561px ~ 768px): iPad Mini / iPad --- */
+@media (min-width: 561px) and (max-width: 768px) {
   .container {
     max-width: 600px;
     padding: 16px 20px 40px;
