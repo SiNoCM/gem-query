@@ -25,7 +25,7 @@
               <select v-model="selectedId" class="ios-select">
                 <option :value="null">请选择宝石</option>
                 <option v-for="gem in gemTypes" :key="gem.id" :value="gem.id">
-                  {{ gem.name }}（{{ gem.ratio === 3 ? '3合1' : '2合1' }}）
+                  {{ gem.name }}
                 </option>
               </select>
               <span class="select-arrow">›</span>
@@ -64,7 +64,7 @@
               </div>
               <div class="result-gem-text">
                 <h2 class="result-title">{{ result.gem.name }}</h2>
-                <span class="result-subtitle">{{ result.rule.targetLevel }}级 · {{ result.gem.ratio === 3 ? '3合1' : '2合1' }}</span>
+                <span class="result-subtitle">{{ result.rule.targetLevel }}级</span>
               </div>
             </div>
             <div class="result-badge">
